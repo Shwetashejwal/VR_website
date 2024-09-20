@@ -1,0 +1,395 @@
+<html>
+ <head>
+  <title>
+   Equitek
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+<section>
+    <div class="navbar">
+        <div class="logo">
+            <img  height="30" src="img\logo-colour.png" width="30";/>
+            <span>EquiTek</span>
+        </div>
+        <div class="nav-links">
+            <a href="#Home">Home</a>
+            <a href="#products">Product</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="#Home">Home</a>
+        <a href="#products">Product</a>
+        <a href="#about">About</a>
+    </div>
+    <script>
+        var menuTimeout;
+    
+        function toggleMenu() {
+            var menu = document.getElementById("dropdown-menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+                clearTimeout(menuTimeout); // Clear the timeout if the menu is manually closed
+            } else {
+                menu.style.display = "flex";
+                // Set a timeout to automatically close the menu after 5 seconds
+                menuTimeout = setTimeout(function() {
+                    menu.style.display = "none";
+                }, 1000); // 5000 milliseconds = 5 seconds
+            }
+        }
+    
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById("dropdown-menu");
+            var toggleButton = document.getElementById("menu-toggle-button");
+    
+            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+                menu.style.display = "none";
+                clearTimeout(menuTimeout); // Clear the timeout if the menu is manually closed
+            }
+        });
+    
+        // Optional: Make sure the menu closes if you click on the toggle button again
+        document.getElementById("menu-toggle-button").addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+            toggleMenu();
+        });
+    </script>
+  
+    
+</section>
+<section id="Home">
+    <div class="container">
+        <div class="text-content">
+         <h1>
+          The Next Big Thing !
+         </h1>
+         <p>
+          Join us in our journey to find out how the world of VR is evolving.
+         </p>
+         <a class="button_h" href="#about">
+          Know More
+         </a>
+        </div>
+        <div class="image-content">
+         <img alt="VR headset with futuristic elements" height="400" src="img\hero-image.png" width="600"/>
+        </div>
+       </div>
+</section>
+
+<div class="container_feacture">
+    <div class="card card-1">
+     <img alt="Icon representing innovation" height="50" src="img\focus-innovation-icon.png" width="50" style="background-color: #ee59a4; text-align: center;"/>
+     <h3>
+      Focus on Innovation
+     </h3>
+     <p>
+      Stay ahead with the latest developments in VR technology, bringing new dimensions to immersive experiences.
+     </p>
+    </div>
+    <div class="card card-2">
+     <img alt="Icon representing building the future" height="50" src="img\building-the-future-icon.png" width="50" style="background-color: rgb(255, 238, 0);"/>
+     <h3>
+      Building the Future
+     </h3>
+     <p>
+      Explore the foundational elements that drive VR, from cutting-edge hardware to revolutionary software solutions.
+     </p>
+    </div>
+    <div class="card card-3">
+     <img alt="Icon representing connected worlds" height="50" src="img\building-the-future-icon.png" width="50" style="background-color: rgb(9, 157, 195);"/>
+     <h3>
+      Connected Worlds
+     </h3>
+     <p>
+      Discover the seamless integration of virtual reality with other emerging technologies, creating interconnected digital ecosystems.
+     </p>
+    </div>
+   </div>
+
+<section id="products">
+    <div class="container_p">
+        <div class="header">
+         Products
+        </div>
+        <div class="products">
+         <div class="product-card">
+          <img alt="HTC VIVE headset" height="290" src="img\htc-vive.png" width="239"/>
+          <div class="product-info" style="background-color: black;">
+           <h3>
+            HTC VIVE
+           </h3>
+           <a href="#">
+            Learn more
+            <i class="fas fa-chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-card">
+          <img alt="HTC VIVE Pro headset"  src="img\htc-vive-pro.png" />
+          <div class="product-info" style="background-color: black;">
+           <h3>
+            HTC VIVE Pro
+           </h3>
+           <a href="#">
+            Learn more
+            <i class="fas fa-chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-card">
+          <img alt="Oculus Rift headset" height="200" src="img\oculus-rift.png" width="300"/>
+          <div class="product-info" style="background-color: black;">
+           <h3>
+            Oculus Rift
+           </h3>
+           <a href="#">
+            Learn more
+            <i class="fas fa-chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-card">
+          <img alt="Playstation VR headset" height="100" src="img\playstation-vr.png" width="100"/>
+          <div class="product-info" style="background-color: black;">
+           <h3>
+            Playstation VR
+           </h3>
+           <a href="#">
+            Learn more
+            <i class="fas fa-chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-card">
+          <img alt="Samsung VR headset" height="200" src="img\samsung-vr.png" width="300"/>
+          <div class="product-info" style="background-color: black;">
+           <h3>
+            Samsung Gear VR
+           </h3>
+           <a href="#">
+            Learn more
+            <i class="fas fa-chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-card">
+          <img alt="Google Daydream View headset" height="200" src="img\htc-vive-cosmic-vr.png" width="300"/>
+          <div class="product-info" style="background-color: black;">
+           <h3>
+            Google Daydream View
+           </h3>
+           <a href="#">
+            Learn more
+            <i class="fas fa-chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-card">
+          <img alt="Valve Index headset" height="200" src="img\hp-vr.png" width="300"/>
+          <div class="product-info" style="background-color: black;">
+           <h3>
+            Valve Index
+           </h3>
+           <a href="#">
+            Learn more
+            <i class="fas fa-chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+         </div>
+        </div>
+       </div>
+</section>
+<section>
+    <div class="experiences_vr">
+        <h2 style="margin: 30;">
+            Experiences VR
+        </h2>
+        <div class="experienc_img">
+            <img src="img\vr-headset.png"  style="width: 100vw;max-width: 100%; height: 400;">
+        </div>
+    </div>
+
+    <button class="explore-button" style="    box-shadow: 5px 5px 0px #6A0DAD">Explore</button>
+    <div class="container_" id="possibilities-container">
+        <h1>Explore Possibilities</h1>
+        <p>Unlock New Dimensions through Tech and Virtual Reality</p>
+        <div class="buttons">
+            <div class="button" onclick="showImage('sci-fi')">Sci-Fi</div>
+            <div class="button" onclick="showImage('nature')">Nature</div>
+            <div class="button active" onclick="showImage('gaming')">Gaming</div>
+            <div class="button" onclick="showImage('drive')">Drive</div>
+        </div>
+    </div>
+    <div class="image-container" id="image-container">
+        <img id="displayed-image" src="img\gaming.png" alt="Displayed Image">
+    </div>
+    
+
+    <script>
+        const exploreButton = document.querySelector('.explore-button');
+        const possibilitiesContainer = document.getElementById('possibilities-container');
+        const imageContainer = document.getElementById('image-container');
+        const displayedImage = document.getElementById('displayed-image');
+
+        exploreButton.addEventListener('click', () => {
+            possibilitiesContainer.style.display = 'block';
+            
+        });
+
+        exploreButton.addEventListener('dblclick', () => {
+            possibilitiesContainer.style.display = 'none';
+            imageContainer.style.display = 'none';
+        });
+
+        function showImage(category) {
+            let imageUrl = '';
+            switch (category) {
+                case 'sci-fi':
+                    imageUrl = 'img/sci-fi.png';
+                    break;
+                case 'nature':
+                    imageUrl = 'img/nature.png';
+                    break;
+                case 'gaming':
+                    imageUrl = 'img/gaming.png';
+                    break;
+                case 'drive':
+                    imageUrl = 'img/driving.png';
+                    break;
+            }
+            displayedImage.src = imageUrl;
+            imageContainer.style.display = 'block';
+        }
+    </script>
+</section>
+<section id="about">
+        <div class="container_more">
+            <div class="more">
+                <h1 style="text-align: left; padding: 30px;">
+                More about EquiTek!
+                </h1>
+            </div>
+            <div class="cards_m">
+            <div class="card_m">
+            <img alt="Tech Innovations - A futuristic gadget with a green background" height="300" src="img\tech-innovations.png" width="300"/>
+            <h2>
+            Tech Innovations
+            </h2>
+            <p>
+            Unveiling the latest in tech innovation, from cutting-edge gadgets to groundbreaking VR experiences. Dive into expert reviews and insights.
+            </p>
+            </div>
+            <div class="card_m">
+            <img alt="VR Game Development - A mannequin head with a dark background" height="150" src="img\vr-game-development.png" width="150"/>
+            <h2>
+            VR Game Development
+            </h2>
+            <p>
+            Explore the art of VR game development, showcasing the blend of technology and creativity in crafting immersive virtual worlds.
+            </p>
+            </div>
+            <div class="card_m">
+            <img alt="Immersive Experiences - A statue with a green and blue background" height="150" src="img\immersive-experiences.png" width="150"/>
+            <h2>
+            Immersive Experiences
+            </h2>
+            <p>
+            Delve into a collection of VR projects, where technology pushes the boundaries of imagination and transforms the digital landscape.
+            </p>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function validateForm(event) {
+                event.preventDefault();
+                const email = document.querySelector('input[type="email"]').value;
+                const receiveEmails = document.getElementById('receive-emails').checked;
+                const successMessage = document.querySelector('.success-message');
+    
+                if (!email) {
+                    alert('Please enter your email.');
+                    return;
+                }
+    
+                if (!receiveEmails) {
+                    alert('You must agree to receive emails.');
+                    return;
+                }
+    
+                successMessage.style.display = 'block';
+            }
+    </script>
+    <div class="container_mail">
+        <div class="card_mail">
+        <div class="profile">
+        <img alt="Profile picture of Jonathan Vader" height="100" src="img\jonather-vader-profile.png" width="100"/>
+        <h2>
+        Jonathan Vader
+        </h2>
+        <p>
+        Hello, EquiTek is a personal blog created by me for tech enthusiasts and people looking to buy the latest Tech. I am a VR Games Developer who loves to create immersive experiences. You can visit my personal website to see my work
+        </p>
+        <a href="#">
+        Know more
+        <i class="fas fa-arrow-right">
+        </i>
+        </a>
+        </div>
+        <div class="mailing-list">
+        <h2>
+        MAILING LIST
+        </h2>
+        <p>
+        Sign up to the mailing list and stay updated on the latest posts and offers
+        </p>
+        <form onsubmit="validateForm(event)">
+        <input placeholder="Email ID" type="email"/>
+        <div>
+            <input id="receive-emails" type="checkbox"/>
+            <label for="receive-emails">
+            I agree to receive emails
+            </label>
+        </div>
+        <div>
+            <input id="third-party" type="checkbox"/>
+            <label for="third-party">
+            I allow sharing with third-party partners
+            <span style="font-size: 12px;">
+            (Optional)
+            </span>
+            </label>
+        </div>
+        <button type="submit">
+            SUBMIT
+            <i class="fas fa-arrow-right">
+            </i>
+        </button>
+        </form>
+        <div class="success-message">
+        Thank you for subscribing!
+        </div>
+        </div>
+        <div class="logo_mail">
+        <img alt="EquiTek logo" height="300" src="img\logo-white.png" width="300"style="margin-bottom: 20px;"/>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
